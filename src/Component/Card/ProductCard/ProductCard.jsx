@@ -14,8 +14,6 @@ const ProductCard = () => {
         // padding: "0px",
         width: "100%",
         height: "100%",
-        // padding:"2px"
-        // border: "2px solid black",
       }}
     >
       {imageData.map((CardImage, index) => {
