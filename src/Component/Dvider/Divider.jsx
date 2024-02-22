@@ -4,7 +4,7 @@ const DividerHeading = ({heading}) => {
   return (
     <>
       <div>
-        <Divider sx={{margin:"30px",fontSize:"2rem"}}>{heading}</Divider>
+        <Divider sx={{fontSize:"2rem",fontWeight:"700",margin:"10px"}}>{heading}</Divider>
       </div>
     </>
   );

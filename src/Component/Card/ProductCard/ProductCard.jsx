@@ -10,10 +10,14 @@ const ProductCard = () => {
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(4,1fr)`,
-        gap: "10px",
+        // gap: "10px",
+        justifyContent:"center",
         // padding: "0px",
         width: "100%",
         height: "100%",
+        marginTop:"20px",
+        margin:"0px",
+        padding:"0px"
       }}
     >
       {imageData.map((CardImage, index) => {
@@ -22,10 +26,11 @@ const ProductCard = () => {
           <div
             key={index}
             style={{
-              width: "300px",
+              width: "280px",
               height: "300px",
               // border: "1px solid black",
               padding: "3px",
+              // transform:"rotate(9deg)"
             }}
           >
             <div
@@ -37,11 +42,13 @@ const ProductCard = () => {
                 width: "100%",
                 height: "100%",
                 backgroundSize: "cover",
-                borderRadius: "5px",
+                borderTopRightRadius: "10px",
+                borderTopLeftRadius:"10px",
                 padding: "0px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                // transform: 'skew(5deg)',
               }}
             >
               <div
@@ -49,7 +56,8 @@ const ProductCard = () => {
                   width: "60%",
                   height: "60%",
                   border: "2px solid black",
-                  padding: "10px 10px 10px 10px",
+                  // padding: "10px 10px 10px 10px",
+           
                   
                 }}
                 className="ShopNowContainer"

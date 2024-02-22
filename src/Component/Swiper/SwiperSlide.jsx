@@ -10,8 +10,8 @@ const Swiperslide = () => {
 
   return (
     <Box sx={{}}>
-      <Swiper
-        style={{ height: "400px" }}
+      <Swiper 
+        style={{ height: "400px" ,borderRadius:"15px",margin:"0px"}}
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={10}
         slidesPerView={1}
