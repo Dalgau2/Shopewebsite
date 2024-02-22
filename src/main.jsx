@@ -19,7 +19,7 @@ import AboutPage from "./About/AboutPage.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserProvider>
-      <AboutPage/>
+      <App/>
     </UserProvider>
   </BrowserRouter>
 );
