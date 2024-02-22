@@ -9,11 +9,6 @@ const HomePage=()=>{
     return(
         <>
        <Box> <SwiperSlide/></Box>
-        {/* <Box><ProductCar/></Bdox> */}
-        <Box><h1>Products</h1></Box>
-        <Box><ProductCard/></Box>
-        <Box sx={{marginTop:"15px",padding:"5px"}}><CardList/></Box>
-        {/* <Box><Allcategory/></Box> */}
         </>
     )
 }
