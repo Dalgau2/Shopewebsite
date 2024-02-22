@@ -13,12 +13,13 @@ import ProductCardlist from "./Component/Card/ProductCard/ProductCard.jsx";
 import Allcategory from "./Component/Card/CategoryCard/AllCatigoryCardList.jsx";
 import DividerHeading from "./Component/Dvider/Divider.jsx";
 import ProductCard from "./Component/Card/ProductCard/ProductCard.jsx";
+import AboutPage from "./About/AboutPage.jsx";
 // import { SwiperSlide } from "swiper/react";
 // import OfferCard from "./Component/OfferCard/Card.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserProvider>
-      <App/>
+      <AboutPage/>
     </UserProvider>
   </BrowserRouter>
 );
