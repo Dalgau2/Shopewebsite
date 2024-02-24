@@ -1,14 +1,18 @@
 [
     {
-        "image":"src/assets/Image/pexels-andrea-piacquadio-3775120-removebg-preview.png"
+        "title": "women's clothing",
+        "image":"src/assets/Image/girl-4809433_1280.jpg"
     },
     {
-        "image":"src/assets/Image/pexels-andrea-piacquadio-837140-removebg-preview.png"
+        "title":    "men's clothing",
+        "image":"src/assets/Image/man-2920911_1280.jpg"
     },
     {
-        "image":"src/assets/Image/pexels-dima-valkov-3266700-removebg-preview.png"
+        "title": "jewelery",
+        "image":"src/assets/Image/mystic-topaz-669519_1920.jpg"
     },
     {
+        "title":"electronics",
         "image":"https://5.imimg.com/data5/OV/KM/CR/ANDROID-37090388/product-jpeg-500x500.jpg"
     }
 ]
