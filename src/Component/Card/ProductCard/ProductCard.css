@@ -1,9 +1,0 @@
-.ShopNowContainer{
-    display: none;
-}
-.parentHover:hover{
-    .ShopNowContainer{
-        display: block;
-    }
-    /* background-color: red; */
-}

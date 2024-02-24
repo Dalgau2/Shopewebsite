@@ -1,0 +1,29 @@
+[
+    {
+        "id":"1",
+        "title": "women's clothing",
+        "image":"src/assets/Image/girl-4809433_1280.jpg",
+        "para":"Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience, providing you with unmatched quality, innovation, and a touch of elegance."
+    },
+    {
+        "id":"2",
+        "title":    "men's clothing",
+        "image":"src/assets/Image/man-2920911_1280.jpg"
+        ,
+        "para":"Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience, providing you with unmatched quality, innovation, and a touch of elegance."
+    },
+    {
+        "id":"3",
+        "title": "jewelery",
+        "image":"src/assets/Image/mystic-topaz-669519_1920.jpg"
+        ,
+        "para":"Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience, providing you with unmatched quality, innovation, and a touch of elegance."
+    },
+    {
+        "id":"4",
+        "title":"electronics",
+        "image":"https://5.imimg.com/data5/OV/KM/CR/ANDROID-37090388/product-jpeg-500x500.jpg"
+        ,
+        "para":"Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience, providing you with unmatched quality, innovation, and a touch of elegance."
+    }
+]
