@@ -17,7 +17,7 @@ const Layout=()=>{
         <div className="outlet" style={{minHeight:"100vh",marginTop:"88px"}}>
             <Outlet/>
         </div>
-        <div className="footer"style={{bottom:0}}>
+        <div className="footer"style={{bottom:0,padding:"0px"}}>
             <Footer/>
         </div>
     </div> 

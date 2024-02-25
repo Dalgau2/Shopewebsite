@@ -3,10 +3,10 @@ import "./Footer.css"
 import { UserContext } from "../Context/Context";
 const Footer = () => {
     const {currentUser}=useContext(UserContext)
-  return <div className="footer">
-    <footer className="footer">
+  return <div className="footer" style={{padding:"0px"}}>
+    <footer className="footer" style={{backgroundColor:"black",height:"300px"}}>
   <div className="footer__addr">
-    <h1 className="footer__logo">AMERICAN TRENDS{currentUser} </h1>
+    <h1 className="footer__logo" style={{color:"white",fontFamily:"roboto",fontWeight:"700"}}>AMERICAN TRENDS</h1>
     <h2>Contact</h2>
     <address>
       5534 Somewhere In. The World 22193-10212   
