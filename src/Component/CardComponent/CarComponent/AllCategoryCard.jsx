@@ -1,11 +1,17 @@
 import { Box, Button, Paper, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { SiShopee } from "react-icons/si";
+import { useNavigate } from "react-router";
 const AllCategoryCard = ({ data }) => {
   const { title, image, para } = data;
-  // console.log(title)
+
+  // navigate
+   const navigate =useNavigate()
+   const handelClick=(title)=>{
+    navigate(`${title}`)
+   }
   return (
-    <Box p={0}>
+    <Box p={0} mb={0}>
       {title.includes("women's clothing") ? (
         <Box
           border={0}
@@ -76,12 +82,13 @@ const AllCategoryCard = ({ data }) => {
                 variant="contained"
                 sx={{
                   maxWidth: "200px",
-                  height: "45px",
+                  minHeight: "45px",
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
-                // onClick={}
+                onClick={(()=>handelClick(title))}
               >
+                
                 <Typography
                   variant="h6"
                   color={"white"}
@@ -124,6 +131,7 @@ const AllCategoryCard = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "900",
                   textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)",
+                  color: "#111827",
                 }}
               >
                 {title}
@@ -142,10 +150,11 @@ const AllCategoryCard = ({ data }) => {
                 variant="contained"
                 sx={{
                   maxWidth: "200px",
-                  height: "45px",
+                  minHeight: "45px",
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
+                onClick={(()=>handelClick(title))}
               >
                 <Typography
                   variant="h6"
@@ -187,7 +196,6 @@ const AllCategoryCard = ({ data }) => {
             padding: "0px",
             gap: "5px",
             justifyContent: "center",
-
           }}
         >
           <Box border={0} p={5} sx={{ width: "560px", height: "700px" }}>
@@ -214,7 +222,7 @@ const AllCategoryCard = ({ data }) => {
               height: "300px",
               display: "flex",
               flexDirection: "column",
-              borderStyle:"none"
+              borderStyle: "none",
             }}
           >
             <Box mt={5}>
@@ -224,6 +232,7 @@ const AllCategoryCard = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "900",
                   textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)",
+                  color: "#111827",
                 }}
               >
                 {title}
@@ -242,10 +251,11 @@ const AllCategoryCard = ({ data }) => {
                 variant="contained"
                 sx={{
                   maxWidth: "200px",
-                  height: "45px",
+                  minHeight: "45px",
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
+                onClick={(()=>handelClick(title))}
               >
                 <Typography
                   variant="h6"
@@ -280,8 +290,8 @@ const AllCategoryCard = ({ data }) => {
               height: "300px",
               display: "flex",
               flexDirection: "column",
-              borderRadius:"15px",
-              borderStyle:"none"
+              borderRadius: "15px",
+              borderStyle: "none",
             }}
           >
             <Box mt={5}>
@@ -291,6 +301,7 @@ const AllCategoryCard = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "900",
                   textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)",
+                  color: "#111827",
                 }}
               >
                 {title}
@@ -309,10 +320,11 @@ const AllCategoryCard = ({ data }) => {
                 variant="contained"
                 sx={{
                   maxWidth: "200px",
-                  height: "45px",
+                  minHeight: "45px",
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
+                onClick={(()=>handelClick(title))}
               >
                 <Typography
                   variant="h6"
