@@ -4,7 +4,8 @@ import LoginPage from "./Component/Login/Login";
 import Navbar from "./Component/NavBar/Navbar";
 import HomePage from "./Component/Page/Home";
 import SingleProductList from "./Component/SingleCategory/SingleCategoryList";
-import OneProductList from "./Component/SingleCategory/OneProductList";
+import OneProduct from "./Component/SingleCategory/OneProduct";
+
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/:title"  element={<SingleProductList />} />
-          <Route path="/:title/:id" element={<OneProductList/>}/>
+          <Route path="/:title/:id" element={<OneProduct/>}/>
         </Route>
       </Routes>
     </>

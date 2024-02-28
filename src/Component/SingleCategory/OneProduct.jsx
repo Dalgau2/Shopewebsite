@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 // import Singlecategory from "../CardComponent/CarComponent/SingleCategory";
 import { Box, Paper } from "@mui/material";
 import { useParams } from "react-router";
+import OneProductCard from "../CardComponent/CarComponent/OneProductCard";
 // import Paper from "@mui/material";
-const OneProductList = () => {
+const OneProduct= () => {
   const { id } = useParams();
   const [getData, setData] = useState({});
   const [isLoading, setLoading] = useState(false);
@@ -31,26 +32,9 @@ console.log(lgt)
       {isLoading ? (
         "Datais Loading"
       ) : Object.keys(getData).length>=0? (
-        <Box>
-          <Box border={0} p={0} sx={{ width: "560px", height: "700px" }}>
-            <Paper
-              elevation={15}
-              border={0}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                backgroundImage: `url(${getData.image})`,
-                objectFit: "cover",
-                backgroundSize: "cover",
-                backgroundPositionY: "100%",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></Paper>
-          </Box>
-        </Box>
+            <OneProductCard/>
       ) : null}
     </>
   );
 };
-export default OneProductList;
+export default OneProduct;
