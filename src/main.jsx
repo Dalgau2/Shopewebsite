@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import AllCategoryList from "./Component/CardComponent/CardlistComponent/AllCategoryList.jsx";
 import AllCategoryCard from "./Component/CardComponent/CarComponent/AllCategoryCard.jsx";
 import OneProductCard from "./Component/CardComponent/CarComponent/OneProductCard.jsx";
+import OneProduct from "./Component/SingleCategory/OneProduct.jsx";
+import MyRating from "./Component/Rating/MyRating.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>

@@ -1,22 +1,26 @@
 import { Box, Typography, Button } from "@mui/material";
 import img from "../../../assets/Image/pexels-andrea-piacquadio-3775120-removebg-preview.png";
 import { green } from "@mui/material/colors";
-const OneProductCard = () => {
+import MyRating from "../../Rating/MyRating";
+const OneProductCard = ({ data }) => {
+  const { title, price, category, description, rating, image } = data;
+  
+  // console.log(rating.rate,"ratting data");
   return (
     <>
-      <Box m={4} sx={{ display: "flex", gap: "5px", backgroundColor: "b" }}>
+      <Box m={0} sx={{ display: "flex", gap: "5px" }}>
         <Box
           border={0}
-          p={2}
-          sx={{ width: "70%", height: "500px", display: "flex" }}
+          p={5}
+          sx={{ width: "70%", height: "100%", display: "flex" }}
         >
           <Box
             border={0}
             borderRadius={2}
-            sx={{ width: "60%", height: "100%" }}
+            sx={{ width: "60%", height: "100%", padding: "15px" }}
           >
             <img
-              src={img}
+              src={image}
               alt=""
               style={{
                 width: "100%",
@@ -28,12 +32,12 @@ const OneProductCard = () => {
           </Box>
           <Box
             p={2}
-            border={0}
+            border={1}
             borderColor={green}
             sx={{
               width: "300px",
               display: "flex",
-              alignItems: "center",
+              // alignItems: "center",
               marginLeft: "5px",
             }}
           >
@@ -44,15 +48,18 @@ const OneProductCard = () => {
                 variant="h4"
                 sx={{ fontFamily: "Rototo", fontWeight: "700" }}
               >
-                Category
+                {category ? category.slice(0, 20) : null}
               </Typography>
               <Typography
                 variant="h5"
                 sx={{ fontFamily: "Times New Roman", fontWeight: "400" }}
               >
-                title
+                {title ? title.slice(0, 20) : null}
+                {title ? title.slice(20, 30) : null}
+                {title ? title.slice(20, 30) : null}
+                {rating ? <MyRating data={rating}/>:null}
               </Typography>
-              <Typography>rating</Typography>
+              {/* <Typography>{rating}</Typography> */}
             </Box>
           </Box>
         </Box>
@@ -68,7 +75,7 @@ const OneProductCard = () => {
           >
             <Box sx={{ height: "150px", width: "120px", marginLeft: "5px" }}>
               <img
-                src={img}
+                src={image}
                 alt="women"
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
               />
@@ -81,10 +88,10 @@ const OneProductCard = () => {
                 marginLeft: "10px",
               }}
             >
-              <Box>detail div</Box>
-              <Box>detail div</Box>
-              <Box>detail div</Box>
-              <Box>detail div</Box>
+              <Box>{title}</Box>
+              {/* <Box>{rating}</Box> */}
+              <Box>{price}</Box>
+              <Box>{title}</Box>
             </Box>
           </Box>
 
@@ -96,7 +103,7 @@ const OneProductCard = () => {
               marginTop: "10px",
             }}
           >
-            <Box sx={{ width: "400px" }}>
+            <Box sx={{ width: "300px" }}>
               <Button variant="contained">Add To cart</Button>
             </Box>
           </Box>
