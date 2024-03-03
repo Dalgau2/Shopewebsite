@@ -6,10 +6,10 @@ const AllCategoryCard = ({ data }) => {
   const { title, image, para } = data;
 
   // navigate
-   const navigate =useNavigate()
-   const handelClick=(title)=>{
-    navigate(`${title}`)
-   }
+  const navigate = useNavigate();
+  const handelClick = (title) => {
+    navigate(`${title}`);
+  };
   return (
     <Box p={0} mb={0}>
       {title.includes("women's clothing") ? (
@@ -86,9 +86,8 @@ const AllCategoryCard = ({ data }) => {
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
-                onClick={(()=>handelClick(title))}
+                onClick={() => handelClick(title)}
               >
-                
                 <Typography
                   variant="h6"
                   color={"white"}
@@ -154,7 +153,7 @@ const AllCategoryCard = ({ data }) => {
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
-                onClick={(()=>handelClick(title))}
+                onClick={() => handelClick(title)}
               >
                 <Typography
                   variant="h6"
@@ -255,7 +254,7 @@ const AllCategoryCard = ({ data }) => {
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
-                onClick={(()=>handelClick(title))}
+                onClick={() => handelClick(title)}
               >
                 <Typography
                   variant="h6"
@@ -324,7 +323,7 @@ const AllCategoryCard = ({ data }) => {
                   borderRadius: "20px",
                   backgroundColor: "#3c2c5b",
                 }}
-                onClick={(()=>handelClick(title))}
+                onClick={() => handelClick(title)}
               >
                 <Typography
                   variant="h6"

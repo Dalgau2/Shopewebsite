@@ -32,12 +32,16 @@ const OneProduct = () => {
   }, [id]);
   console.log(getData);
   console.log(IsLoading);
-  return(
+  return (
     <Box>
-      {IsLoading?<Box>
-        <h1>Loading</h1>
-      </Box>:<OneProductCard data={getData}/>}
+      {IsLoading ? (
+        <Box>
+          <h1>Loading...</h1>
+        </Box>
+      ) : (
+        <OneProductCard data={getData} />
+      )}
     </Box>
-  ) 
-}
+  );
+};
 export default OneProduct;

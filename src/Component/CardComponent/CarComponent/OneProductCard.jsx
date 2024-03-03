@@ -2,22 +2,43 @@ import { Box, Typography, Button } from "@mui/material";
 import img from "../../../assets/Image/pexels-andrea-piacquadio-3775120-removebg-preview.png";
 import { green } from "@mui/material/colors";
 import MyRating from "../../Rating/MyRating";
+import { FaCartArrowDown } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { Addchart } from "@mui/icons-material";
+import { UserContext } from "../../Context/Context";
 const OneProductCard = ({ data }) => {
-  const { title, price, category, description, rating, image } = data;
-  
-  // console.log(rating.rate,"ratting data");
+  const { title, price, category, description, rating, image,id } = data;
+  const [addItem, setAddItem] = useState([]);
+  const handleAdd = () => {
+    //==>item
+    //====one object
+    //===>checkid
+    ///if have increse quatio by one
+    //if not than add
+    setAddItem([...addItem, {title,price,id,image,quantity:1}]);
+    addItem.map((item)=>{
+      if(item==addItem.id){
+        // setAddItem({quantity:+1})
+      }else{
+        // setAddItem(quantity=1)
+      }
+      console.log(item)
+    })
+  };
+  // console.log(addItem);
   return (
     <>
       <Box m={0} sx={{ display: "flex", gap: "5px" }}>
         <Box
           border={0}
-          p={5}
+          p={2}
           sx={{ width: "70%", height: "100%", display: "flex" }}
         >
           <Box
-            border={0}
-            borderRadius={2}
-            sx={{ width: "60%", height: "100%", padding: "15px" }}
+            border={1}
+            borderColor={"#002D62"}
+            borderRadius={1}
+            sx={{ width: "60%", padding: "10px" }}
           >
             <img
               src={image}
@@ -26,14 +47,15 @@ const OneProductCard = ({ data }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "contain",
-                border: "2px solid red",
+                // border: "2px solid red",
               }}
             />
           </Box>
+
           <Box
             p={2}
-            border={1}
-            borderColor={green}
+            // border={1}
+            // borderColor={green}
             sx={{
               width: "300px",
               display: "flex",
@@ -57,9 +79,29 @@ const OneProductCard = ({ data }) => {
                 {title ? title.slice(0, 20) : null}
                 {title ? title.slice(20, 30) : null}
                 {title ? title.slice(20, 30) : null}
-                {rating ? <MyRating data={rating}/>:null}
+                {price ? (
+                  <Box
+                    sx={{
+                      fontFamily: "robot",
+                      fontWeight: "700",
+                      fontSize: "2rem",
+                    }}
+                  >
+                    ${price}
+                  </Box>
+                ) : null}
+                {rating ? <MyRating data={rating} /> : null}
               </Typography>
-              {/* <Typography>{rating}</Typography> */}
+              <Typography
+                variant="body2"
+                sx={{
+                  fontFamily: "palanquin",
+                  fontSize: "18px",
+                  color: "#6d6d6d",
+                }}
+              >
+                {description}
+              </Typography>
             </Box>
           </Box>
         </Box>
@@ -73,7 +115,7 @@ const OneProductCard = ({ data }) => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ height: "150px", width: "120px", marginLeft: "5px" }}>
+            <Box sx={{ height: "170px", width: "160px", marginLeft: "5px" }}>
               <img
                 src={image}
                 alt="women"
@@ -83,28 +125,95 @@ const OneProductCard = ({ data }) => {
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
+                alignContent: "center",
                 gap: "5px",
                 marginLeft: "10px",
+                flexDirection: "column",
               }}
             >
               <Box>{title}</Box>
-              {/* <Box>{rating}</Box> */}
-              <Box>{price}</Box>
-              <Box>{title}</Box>
+              <Box
+                sx={{
+                  fontFamily: "Roboto",
+                  fontWeight: "700",
+                  fontSize: "1.2rem",
+                }}
+              >
+                ${price}
+              </Box>
+              {description ? (
+                <Box
+                  sx={{
+                    fontFamily: "palanqiun",
+                    fontWeight: "700",
+                    fontSize: "17px",
+                  }}
+                >
+                  {description.slice(0, 19)}{" "}
+                </Box>
+              ) : null}
             </Box>
           </Box>
 
           {/* detail div */}
           <Box
+            border={0}
             sx={{
               display: "flex",
               justifyContent: "center",
-              marginTop: "10px",
+              // alignItems:"center"
+              // marginTop: "10px",
             }}
           >
-            <Box sx={{ width: "300px" }}>
-              <Button variant="contained">Add To cart</Button>
+            <Box sx={{ width: "40%" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  maxWidth: "200px",
+                  minHeight: "40px",
+                  borderRadius: "10px",
+                  backgroundColor: "#002D62",
+                }}
+                // onClick={(()=>handelClick(title))}
+              >
+                <Typography
+                  variant="h6"
+                  color={"white"}
+                  fontFamily={"Roboto"}
+                  fontWeight={400}
+                  display={"flex"}
+                >
+                  buy now
+                  <Box sx={{ marginTop: "2px" }}>
+                    <FaCartArrowDown />
+                  </Box>
+                </Typography>
+              </Button>
+            </Box>
+            <Box sx={{ width: "40%", marginLeft: "10px" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  maxWidth: "200px",
+                  minHeight: "40px",
+                  borderRadius: "10px",
+                  backgroundColor: "#3c2c5b",
+                }}
+                onClick={() => handleAdd(data)}
+              >
+                <Typography
+                  variant="h6"
+                  color={"white"}
+                  fontFamily={"Roboto"}
+                  fontWeight={400}
+                  display={"flex"}
+                >
+                  Add To card{" "}
+                  <Box sx={{ marginTop: "2px" }}>
+                    <FaCartArrowDown />
+                  </Box>
+                </Typography>
+              </Button>
             </Box>
           </Box>
         </Box>

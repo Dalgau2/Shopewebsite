@@ -5,8 +5,8 @@ const MyRating = ({data}) => {
     console.log(rate)
     
   return (
-    <Box>
-      <Rating name="read-only" value={rate} readOnly ><p>{count}Reviews</p>
+    <Box >
+      <Rating sx={{fontSize:"40px"}}  name="read-only"  value={rate} readOnly ><p>{count}Reviews</p>
       </Rating>
     </Box>
   );

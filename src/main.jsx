@@ -8,11 +8,14 @@ import AllCategoryCard from "./Component/CardComponent/CarComponent/AllCategoryC
 import OneProductCard from "./Component/CardComponent/CarComponent/OneProductCard.jsx";
 import OneProduct from "./Component/SingleCategory/OneProduct.jsx";
 import MyRating from "./Component/Rating/MyRating.jsx";
+// import { AddCartoProvider } from "./Component/Context/addItemscontext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserProvider>
+   
       <App/>
+   
     </UserProvider>
   </BrowserRouter>
 );
