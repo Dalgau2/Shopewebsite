@@ -30,7 +30,7 @@ const OneProduct = () => {
       console.log("finally is run");
     }
   }, [id]);
-  console.log(getData);
+  // console.log(getData);
   console.log(IsLoading);
   return (
     <Box>

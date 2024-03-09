@@ -10,7 +10,7 @@ const SingleCategoryCard = ({ data }) => {
 const navigate=useNavigate()
   const handleclick = (id) => {
     navigate(`${id}`)
-    // console.log(id)
+    console.log(id)
   };
   return (
     <>

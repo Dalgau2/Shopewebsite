@@ -3,29 +3,27 @@ import img from "../../../assets/Image/pexels-andrea-piacquadio-3775120-removebg
 import { green } from "@mui/material/colors";
 import MyRating from "../../Rating/MyRating";
 import { FaCartArrowDown } from "react-icons/fa";
-import { useContext, useState } from "react";
-import { Addchart } from "@mui/icons-material";
-import { UserContext } from "../../Context/Context";
+import { useState } from "react";
 const OneProductCard = ({ data }) => {
-  const { title, price, category, description, rating, image,id } = data;
-  const [addItem, setAddItem] = useState([]);
-  const handleAdd = () => {
-    //==>item
-    //====one object
-    //===>checkid
-    ///if have increse quatio by one
-    //if not than add
-    setAddItem([...addItem, {title,price,id,image,quantity:1}]);
-    addItem.map((item)=>{
-      if(item==addItem.id){
-        // setAddItem({quantity:+1})
-      }else{
-        // setAddItem(quantity=1)
-      }
-      console.log(item)
-    })
+  const [addToCart, setAddTocard] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const { title, price, category, description, rating, image, id } = data;
+  const handleAdd = (data) => {
+    const existingItem = addToCart.find((item) => item.id === id);
+  
+    if (existingItem) {
+      // Item already exists in the cart, increase the quantity
+      const updatedCart = addToCart.map((item) =>
+       existingItem ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setAddTocard(updatedCart);
+    } else {
+      // Item doesn't exist in the cart, add it with the given quantity
+      setAddTocard([...addToCart, { id, quantity }]);
+    }
   };
-  // console.log(addItem);
+  console.log(addToCart);
+  console.log("quantity",quantity);
   return (
     <>
       <Box m={0} sx={{ display: "flex", gap: "5px" }}>
@@ -35,7 +33,7 @@ const OneProductCard = ({ data }) => {
           sx={{ width: "70%", height: "100%", display: "flex" }}
         >
           <Box
-            border={1}
+            border={0}
             borderColor={"#002D62"}
             borderRadius={1}
             sx={{ width: "60%", padding: "10px" }}
@@ -165,7 +163,7 @@ const OneProductCard = ({ data }) => {
               // marginTop: "10px",
             }}
           >
-            <Box sx={{ width: "40%" }}>
+            {/* <Box sx={{ width: "40%" }}>
               <Button
                 variant="contained"
                 sx={{
@@ -189,7 +187,7 @@ const OneProductCard = ({ data }) => {
                   </Box>
                 </Typography>
               </Button>
-            </Box>
+            </Box> */}
             <Box sx={{ width: "40%", marginLeft: "10px" }}>
               <Button
                 variant="contained"
