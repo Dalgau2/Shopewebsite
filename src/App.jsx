@@ -5,12 +5,13 @@ import Navbar from "./Component/NavBar/Navbar";
 import HomePage from "./Component/Page/Home";
 import SingleProductList from "./Component/SingleCategory/SingleCategoryList";
 import OneProduct from "./Component/SingleCategory/OneProduct";
+import ScrollTop from "./windowScrollTop/windowScrol l";
 
 
 function App() {
   return (
     <>
-      <Routes>
+     <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import OneProductCard from "../CardComponent/CarComponent/OneProductCard";
+import OneProductSkeleton from "../../Secelaton/oneProductSecleaton";
 const OneProduct = () => {
   const { id } = useParams();
   const [IsLoading, setIsLoading] = useState(false);
@@ -36,7 +37,7 @@ const OneProduct = () => {
     <Box>
       {IsLoading ? (
         <Box>
-          <h1>Loading...</h1>
+          <OneProductSkeleton/>
         </Box>
       ) : (
         <OneProductCard data={getData} />

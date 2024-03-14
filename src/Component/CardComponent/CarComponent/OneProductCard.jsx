@@ -10,7 +10,7 @@ const OneProductCard = ({ data }) => {
   const { title, price, category, description, rating, image, id } = data;
   const handleAdd = (data) => {
     const existingItem = addToCart.find((item) => item.id === id);
-  
+  console.log(existingItem,"existeghgh")
     if (existingItem) {
       // Item already exists in the cart, increase the quantity
       const updatedCart = addToCart.map((item) =>

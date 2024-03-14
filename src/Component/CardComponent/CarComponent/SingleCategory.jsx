@@ -6,11 +6,11 @@ import { useNavigate } from "react-router";
 // import Rating from "@mui/material";
 
 const SingleCategoryCard = ({ data }) => {
-  const { image, title, price,id } = data;
-const navigate=useNavigate()
+  const { image, title, price, id } = data;
+  const navigate = useNavigate();
   const handleclick = (id) => {
-    navigate(`${id}`)
-    console.log(id)
+    navigate(`${id}`);
+    console.log(id);
   };
   return (
     <>

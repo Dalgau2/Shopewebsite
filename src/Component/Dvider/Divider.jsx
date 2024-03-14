@@ -1,7 +1,7 @@
 import { Divider } from "@mui/material";
 import { color } from "framer-motion";
 const DividerHeading = ({ heading, Icon }) => {
-  console.log(heading.title)
+  // console.log(heading.title)
   return (
     <>
       <div>
