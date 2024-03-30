@@ -1,5 +1,5 @@
 import { Box, Skeleton } from "@mui/material";
-
+import { nanoid } from "@reduxjs/toolkit";
 const SingleCategorySkeleton = () => {
   const array = new Array(8).fill(0);
   return (
@@ -16,7 +16,7 @@ const SingleCategorySkeleton = () => {
     >
       {array.map((index) => {
         return (
-          <Box key={index}>
+          <Box key={nanoid()}>
             <Box marginLeft={6}>
               <Skeleton
                 variant="rectangular"

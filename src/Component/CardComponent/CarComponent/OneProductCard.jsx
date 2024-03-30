@@ -1,29 +1,15 @@
 import { Box, Typography, Button } from "@mui/material";
+
 import img from "../../../assets/Image/pexels-andrea-piacquadio-3775120-removebg-preview.png";
 import { green } from "@mui/material/colors";
 import MyRating from "../../Rating/MyRating";
 import { FaCartArrowDown } from "react-icons/fa";
 import { useState } from "react";
 const OneProductCard = ({ data }) => {
-  const [addToCart, setAddTocard] = useState([]);
-  const [quantity, setQuantity] = useState(1);
   const { title, price, category, description, rating, image, id } = data;
   const handleAdd = (data) => {
-    const existingItem = addToCart.find((item) => item.id === id);
-  console.log(existingItem,"existeghgh")
-    if (existingItem) {
-      // Item already exists in the cart, increase the quantity
-      const updatedCart = addToCart.map((item) =>
-       existingItem ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setAddTocard(updatedCart);
-    } else {
-      // Item doesn't exist in the cart, add it with the given quantity
-      setAddTocard([...addToCart, { id, quantity }]);
-    }
-  };
-  console.log(addToCart);
-  console.log("quantity",quantity);
+    
+  }
   return (
     <>
       <Box m={0} sx={{ display: "flex", gap: "5px" }}>

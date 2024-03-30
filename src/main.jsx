@@ -11,14 +11,10 @@ import MyRating from "./Component/Rating/MyRating.jsx";
 import OneProductSkeleton from "./Secelaton/oneProductSecleaton.jsx";
 import SingleCategorySkeleton from "./Secelaton/SingleCategorySkeleton.jsx";
 import Navbar from "./Component/NavBar/Navbar.jsx";
-// import { AddCartoProvider } from "./Component/Context/addItemscontext.jsx";
 
+// import { store } from "./store/Store.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <UserProvider>
-     {/* <SingleCategorySkeleton/> */}
-      {/* <Navbar/> */}
-      <App/>
-    </UserProvider>
+ <App/>
   </BrowserRouter>
 );
