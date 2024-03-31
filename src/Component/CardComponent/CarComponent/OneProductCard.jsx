@@ -1,15 +1,23 @@
 import { Box, Typography, Button } from "@mui/material";
-
 import img from "../../../assets/Image/pexels-andrea-piacquadio-3775120-removebg-preview.png";
 import { green } from "@mui/material/colors";
 import MyRating from "../../Rating/MyRating";
 import { FaCartArrowDown } from "react-icons/fa";
 import { useState } from "react";
+import { useDispatch ,useSelector} from "react-redux";
+import { addItem,removeItem } from "../../Store/store";
+
+
 const OneProductCard = ({ data }) => {
+  const dispatch=useDispatch()
   const { title, price, category, description, rating, image, id } = data;
   const handleAdd = (data) => {
-    
+    dispatch(addItem({title,price,id}))
   }
+  const items=useSelector((state)=>{
+    return state.data.items
+  })
+  console.log(items,"onecartproduct")
   return (
     <>
       <Box m={0} sx={{ display: "flex", gap: "5px" }}>

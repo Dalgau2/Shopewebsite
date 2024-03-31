@@ -11,10 +11,12 @@ import MyRating from "./Component/Rating/MyRating.jsx";
 import OneProductSkeleton from "./Secelaton/oneProductSecleaton.jsx";
 import SingleCategorySkeleton from "./Secelaton/SingleCategorySkeleton.jsx";
 import Navbar from "./Component/NavBar/Navbar.jsx";
-
-// import { store } from "./store/Store.jsx";
+import {store }from "./Component/Store/store.jsx"
+import { Provider } from "react-redux";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
- <App/>
+   <Provider store={store}>
+    <App/>
+   </Provider>
   </BrowserRouter>
 );
