@@ -6,13 +6,14 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { useState } from "react";
 import { useDispatch ,useSelector} from "react-redux";
 import { addItem,removeItem } from "../../Store/store";
+import { Link } from "react-router-dom";
 
 
 const OneProductCard = ({ data }) => {
   const dispatch=useDispatch()
   const { title, price, category, description, rating, image, id } = data;
   const handleAdd = (data) => {
-    dispatch(addItem({title,price,id}))
+    dispatch(addItem({title,price,id,image}))
   }
   const items=useSelector((state)=>{
     return state.data.items
@@ -206,6 +207,9 @@ const OneProductCard = ({ data }) => {
                   </Box>
                 </Typography>
               </Button>
+                <Link to="/checkout" variant="contained" >
+                  checkOut
+                </Link>
             </Box>
           </Box>
         </Box>

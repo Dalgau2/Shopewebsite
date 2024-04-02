@@ -1,5 +1,5 @@
 import profileimg from "../../assets/Image/pexels-andrea-piacquadio-837140-removebg-preview.png";
-import { Avatar, IconButton, Box, MenuItem, Menu } from "@mui/material";
+import { Avatar, IconButton, Box } from "@mui/material";
 import logo from "../../assets/Image/3-removebg-preview.png";
 import { motion } from "framer-motion";
 import { UserContext } from "../Context/Context";
@@ -10,17 +10,25 @@ import { FaGifts } from "react-icons/fa";
 import { RiContactsLine } from "react-icons/ri";
 import ShopCartItemIcon from "../IconsFoCart/CartItemIcon";
 import { useSelector } from "react-redux";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import PlaceOrder from "../PlaceOrder/PlaceOrder";
 const Navbar = () => {
   const { currentUser } = useContext(UserContext);
   const dataOfItemsInCart = useSelector(({ data: { items } }) => {
     return items.filter((item) => item.quantity);
   }).reduce((acc, item) => acc + item.quantity, 0);
   const totalItemIncart = dataOfItemsInCart;
-  console.log(totalItemIncart, "navBar console");
   // menu onClickOpen nad close code
-
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
   const handleClose = () => {
-    console.log("cloae");
+    setAnchorEl(null);
   };
   return (
     <>
@@ -196,14 +204,32 @@ const Navbar = () => {
               className="profile"
               style={{ maxWidth: "10%", height: "10%", marginRight: "10px" }}
             >
-              <IconButton sx={{ width: "50px", height: "50px" }}>
+              <IconButton
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                onClick={handleClick}
+                aria-expanded={open ? "true" : undefined}
+                sx={{ width: "50px", height: "50px" }}
+              >
                 <Avatar
-                  // onClick={handleClick}
                   sx={{ border: "1px solid lightgray" }}
                   src="https://4xwallpapers.com/wp-content/uploads/2023/04/luffy-wallpaper-780x439.jpg"
                 ></Avatar>
-                
               </IconButton>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+              </Menu>
             </div>
             <div></div>
             <div
@@ -213,9 +239,12 @@ const Navbar = () => {
                 display: "flex",
               }}
             >
-              <h3>
+              <IconButton
+                sx={{ width: "40px", height: "40px" }}
+              >
                 <ShopCartItemIcon data={totalItemIncart} />
-              </h3>
+              
+              </IconButton>
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@ import Badge from "@mui/material/Badge";
 import { BsBagCheck } from "react-icons/bs";
 import { useSelector } from "react-redux";
 const ShopCartItemIcon = ({data}) => {
- console.log(data)
   return (
     <IconButton sx={{width:"40px",height:"40px"}}>
       <Badge badgeContent={data } color="primary">
