@@ -1,5 +1,5 @@
 import profileimg from "../../assets/Image/pexels-andrea-piacquadio-837140-removebg-preview.png";
-import { Avatar, IconButton, Box } from "@mui/material";
+import { Avatar, IconButton, Box, Paper } from "@mui/material";
 import logo from "../../assets/Image/3-removebg-preview.png";
 import { motion } from "framer-motion";
 import { UserContext } from "../Context/Context";
@@ -15,8 +15,10 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import PlaceOrder from "../PlaceOrder/PlaceOrder";
+import DropdownBag from "../../Utiles/DropDownBag";
 const Navbar = () => {
   const { currentUser } = useContext(UserContext);
+  const [isOpen,setIsOpen]=useState(false)
   const dataOfItemsInCart = useSelector(({ data: { items } }) => {
     return items.filter((item) => item.quantity);
   }).reduce((acc, item) => acc + item.quantity, 0);
@@ -30,6 +32,11 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  // CartBag
+  const handleBagClick=()=>{
+    setIsOpen(!isOpen)
+  }
+  console.log(isOpen,"cartbag")
   return (
     <>
       <div className="topbar" style={{ margin: "0%", padding: "0%" }}>
@@ -239,12 +246,27 @@ const Navbar = () => {
                 display: "flex",
               }}
             >
-              <IconButton
-                sx={{ width: "40px", height: "40px" }}
-              >
+              <IconButton onClick={handleBagClick} sx={{ width: "40px", height: "40px" }}>
                 <ShopCartItemIcon data={totalItemIncart} />
-              
+                <Paper
+                elevation={5}
+                  sx={{
+                    position: "absolute",
+                    top: "35px",
+                    left: "-65px",
+                    border: "1px solid #3c2c5b",
+                    padding: "2px",
+                    borderRadius: "7px",
+                    zIndex: 10,
+                    backgroundColor: "white",
+                    maxHeight:"270px",
+                    overflow:"auto"
+                  }}
+                >
+                 {isOpen? <DropdownBag />:<Box sx={{display:"none"}} ></Box>}
+                </Paper>
               </IconButton>
+                  
             </div>
           </div>
         </div>

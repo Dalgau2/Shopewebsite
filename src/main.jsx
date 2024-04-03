@@ -13,6 +13,7 @@ import SingleCategorySkeleton from "./Secelaton/SingleCategorySkeleton.jsx";
 import Navbar from "./Component/NavBar/Navbar.jsx";
 import {store }from "./Component/Store/store.jsx"
 import { Provider } from "react-redux";
+import DropdownBag from "./Utiles/DropDownBag.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
    <Provider store={store}>
