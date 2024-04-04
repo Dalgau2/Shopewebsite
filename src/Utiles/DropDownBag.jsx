@@ -104,6 +104,7 @@ const DropdownBag = () => {
           marginBottom: "2px",
           borderRadius: "5px",
           backgroundColor: "#3c2c5b",
+          borderRadius:"20px"
         }}
       >
         Checkout

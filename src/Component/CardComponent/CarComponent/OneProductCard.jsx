@@ -1,24 +1,19 @@
 import { Box, Typography, Button } from "@mui/material";
 import img from "../../../assets/Image/pexels-andrea-piacquadio-3775120-removebg-preview.png";
-import { green } from "@mui/material/colors";
 import MyRating from "../../Rating/MyRating";
 import { FaCartArrowDown } from "react-icons/fa";
-import { useState } from "react";
-import { useDispatch ,useSelector} from "react-redux";
-import { addItem,removeItem } from "../../Store/store";
-import { Link } from "react-router-dom";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../../Store/store";
 const OneProductCard = ({ data }) => {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const { title, price, category, description, rating, image, id } = data;
   const handleAdd = (data) => {
-    dispatch(addItem({title,price,id,image}))
-  }
-  const items=useSelector((state)=>{
-    return state.data.items
-  })
-  console.log(items,"onecartproduct")
+    dispatch(addItem({ title, price, id, image }));
+  };
+  const items = useSelector((state) => {
+    return state.data.items;
+  });
+  console.log(items, "onecartproduct");
   return (
     <>
       <Box m={0} sx={{ display: "flex", gap: "5px" }}>
@@ -59,16 +54,10 @@ const OneProductCard = ({ data }) => {
             <Box
               sx={{ display: "flex", flexDirection: "column", width: "100%" }}
             >
-              <Typography
-                variant="h4"
-                sx={{ fontFamily: "Rototo", fontWeight: "700" }}
-              >
+              <Typography variant="h4" sx={{ fontWeight: "700" }}>
                 {category ? category.slice(0, 20) : null}
               </Typography>
-              <Typography
-                variant="h5"
-                sx={{ fontFamily: "Times New Roman", fontWeight: "400" }}
-              >
+              <Typography variant="h5" sx={{ fontWeight: "400" }}>
                 {title ? title.slice(0, 20) : null}
                 {title ? title.slice(20, 30) : null}
                 {title ? title.slice(20, 30) : null}
@@ -88,7 +77,7 @@ const OneProductCard = ({ data }) => {
               <Typography
                 variant="body2"
                 sx={{
-                  fontFamily: "palanquin",
+                  // fontFamily: "palanquin",
                   fontSize: "18px",
                   color: "#6d6d6d",
                 }}
@@ -191,6 +180,7 @@ const OneProductCard = ({ data }) => {
                   minHeight: "40px",
                   borderRadius: "10px",
                   backgroundColor: "#3c2c5b",
+                  borderRadius: "20px",
                 }}
                 onClick={() => handleAdd(data)}
               >
@@ -207,9 +197,7 @@ const OneProductCard = ({ data }) => {
                   </Box>
                 </Typography>
               </Button>
-                <Link to="/checkout" variant="contained" >
-                  checkOut
-                </Link>
+              {/* > */}
             </Box>
           </Box>
         </Box>

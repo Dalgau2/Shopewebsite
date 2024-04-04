@@ -7,11 +7,11 @@ const DividerHeading = ({ heading, Icon }) => {
       <div>
         <Divider
           sx={{
-            fontSize: "3rem",
+            borderLeftWidth:"10px",            fontSize: "3rem",
             fontWeight: "900",
             margin: "10px",
             marginTop: "15px",
-            borderColor: "1px solid red",
+            borderColor: "4px solid red",
             fontFamily: "Times New Roman",
             textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)",
           }}

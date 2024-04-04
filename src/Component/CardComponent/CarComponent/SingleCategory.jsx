@@ -35,7 +35,7 @@ const SingleCategoryCard = ({ data }) => {
         <Box sx={{ display: "flex", marginLeft: "15px" }}>
           <Typography
             variant="h6"
-            sx={{ fontFamily: "Times New Roman", fontWeight: "400" }}
+            sx={{  fontWeight: "400" }}
           >
             {title.slice(0, 20)}
           </Typography>
@@ -51,10 +51,11 @@ const SingleCategoryCard = ({ data }) => {
             variant="contained"
             sx={{
               width: "100%",
-              height: "25px",
+              height: "30px",
               lineHeight: "20px",
               textAlign: "center",
               backgroundColor: "#3c2c5b",
+              borderRadius:"15px"
             }}
             onClick={() => {
               handleclick(id);

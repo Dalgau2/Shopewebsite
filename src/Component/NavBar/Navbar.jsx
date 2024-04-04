@@ -1,24 +1,18 @@
-import profileimg from "../../assets/Image/pexels-andrea-piacquadio-837140-removebg-preview.png";
-import { Avatar, IconButton, Box, Paper } from "@mui/material";
-import logo from "../../assets/Image/3-removebg-preview.png";
-import { motion } from "framer-motion";
-import { UserContext } from "../Context/Context";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { IoHome } from "react-icons/io5";
-import { FaGifts } from "react-icons/fa";
-import { RiContactsLine } from "react-icons/ri";
-import ShopCartItemIcon from "../IconsFoCart/CartItemIcon";
-import { useSelector } from "react-redux";
 import * as React from "react";
-import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useContext, useState } from "react";
+import { Avatar, IconButton, Box, Paper } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import PlaceOrder from "../PlaceOrder/PlaceOrder";
+import { motion } from "framer-motion";
+import ShopCartItemIcon from "../IconsFoCart/CartItemIcon";
 import DropdownBag from "../../Utiles/DropDownBag";
+import logo from "../../assets/Image/3-removebg-preview.png";
+import { UserContext } from "../Context/Context";
 const Navbar = () => {
-  const { currentUser } = useContext(UserContext);
-  const [isOpen,setIsOpen]=useState(false)
+  // const { currentUser } = useContext(UserContext);
+  const [isOpen, setIsOpen] = useState(false);
   const dataOfItemsInCart = useSelector(({ data: { items } }) => {
     return items.filter((item) => item.quantity);
   }).reduce((acc, item) => acc + item.quantity, 0);
@@ -33,10 +27,10 @@ const Navbar = () => {
     setAnchorEl(null);
   };
   // CartBag
-  const handleBagClick=()=>{
-    setIsOpen(!isOpen)
-  }
-  console.log(isOpen,"cartbag")
+  const handleBagClick = () => {
+    setIsOpen(!isOpen);
+  };
+  console.log(isOpen, "cartbag");
   return (
     <>
       <div className="topbar" style={{ margin: "0%", padding: "0%" }}>
@@ -107,12 +101,10 @@ const Navbar = () => {
                       textDecoration: "none",
                       color: "black",
                       display: "flex",
+                      fontFamily: "Roboto",
                     }}
                   >
-                    <Box sx={{ marginTop: "1px" }}>
-                      <IoHome />
-                    </Box>{" "}
-                    Home
+                    <Box sx={{ marginTop: "1px" }}></Box> Home
                   </Link>
                 </motion.div>
                 <div
@@ -138,9 +130,7 @@ const Navbar = () => {
                       }}
                     >
                       {" "}
-                      <Box sx={{ marginTop: "1px" }}>
-                        <FaGifts />
-                      </Box>
+                      <Box sx={{ marginTop: "1px" }}></Box>
                       Product
                     </a>
                   </motion.div>
@@ -163,10 +153,11 @@ const Navbar = () => {
                       style={{
                         textDecoration: "none",
                         color: "black",
+                        fontWeight: "400",
                         display: "flex",
                       }}
                     >
-                      <Box sx={{ marginTop: "1px" }}></Box> catigore
+                      Catigory
                     </a>
                   </motion.div>
                 </div>
@@ -189,10 +180,8 @@ const Navbar = () => {
                       display: "flex",
                     }}
                   >
-                    <Box sx={{ marginTop: "1px" }}>
-                      <RiContactsLine />
-                    </Box>
-                    Contact Us
+                    <Box sx={{ marginTop: "1px" }}></Box>
+                    Contact us
                   </Link>
                 </motion.div>
               </div>
@@ -246,10 +235,13 @@ const Navbar = () => {
                 display: "flex",
               }}
             >
-              <IconButton onClick={handleBagClick} sx={{ width: "40px", height: "40px" }}>
+              <IconButton
+                onClick={handleBagClick}
+                sx={{ width: "40px", height: "40px" }}
+              >
                 <ShopCartItemIcon data={totalItemIncart} />
                 <Paper
-                elevation={5}
+                  elevation={5}
                   sx={{
                     position: "absolute",
                     top: "35px",
@@ -259,14 +251,17 @@ const Navbar = () => {
                     borderRadius: "7px",
                     zIndex: 10,
                     backgroundColor: "white",
-                    maxHeight:"270px",
-                    overflow:"auto"
+                    maxHeight: "270px",
+                    overflow: "auto",
                   }}
                 >
-                 {isOpen? <DropdownBag />:<Box sx={{display:"none"}} ></Box>}
+                  {isOpen ? (
+                    <DropdownBag />
+                  ) : (
+                    <Box sx={{ display: "none" }}></Box>
+                  )}
                 </Paper>
               </IconButton>
-                  
             </div>
           </div>
         </div>

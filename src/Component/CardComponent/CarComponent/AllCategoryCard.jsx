@@ -72,7 +72,7 @@ const AllCategoryCard = ({ data }) => {
             <Box>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: "Times New Roman", color: "gray" }}
+                sx={{ color: "gray" }}
               >
                 {para}
               </Typography>
@@ -139,7 +139,7 @@ const AllCategoryCard = ({ data }) => {
             <Box>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: "Times New Roman", color: "gray" }}
+                sx={{  color: "gray" }}
               >
                 {para}
               </Typography>
@@ -158,7 +158,6 @@ const AllCategoryCard = ({ data }) => {
                 <Typography
                   variant="h6"
                   color={"white"}
-                  fontFamily={"Roboto"}
                   fontWeight={400}
                 >
                   Shope Now <SiShopee />
@@ -240,7 +239,7 @@ const AllCategoryCard = ({ data }) => {
             <Box>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: "Times New Roman", color: "gray" }}
+                sx={{ color: "gray" }}
               >
                 {para}
               </Typography>
@@ -309,7 +308,7 @@ const AllCategoryCard = ({ data }) => {
             <Box>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: "Times New Roman", color: "gray" }}
+                sx={{  color: "gray" }}
               >
                 {para}
               </Typography>
