@@ -11,13 +11,19 @@ import MyRating from "./Component/Rating/MyRating.jsx";
 import OneProductSkeleton from "./Secelaton/oneProductSecleaton.jsx";
 import SingleCategorySkeleton from "./Secelaton/SingleCategorySkeleton.jsx";
 import Navbar from "./Component/NavBar/Navbar.jsx";
-import {store }from "./Component/Store/store.jsx"
+import { store } from "./Component/Store/store.jsx";
 import { Provider } from "react-redux";
 import DropdownBag from "./Utiles/DropDownBag.jsx";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 ReactDOM.createRoot(document.getElementById("root")).render(
+    
   <BrowserRouter>
-   <Provider store={store}>
-    <App/>
-   </Provider>
+    <Provider store={store}>
+        <App />
+        <ToastContainer/>
+    </Provider>
   </BrowserRouter>
+     
 );
